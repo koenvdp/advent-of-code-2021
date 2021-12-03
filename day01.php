@@ -1,21 +1,28 @@
 <?php
 include 'common.php';
     
-$data = loadData(1);
+class day01 extends abstractSolution {
+    
+    public function run()
+    {
+        $total = 0;
+        $max = count($this->data);
+        $sums = [];
+        for ($i = 0; $i < $max; $i++) {
+            if ($i < $max - 2) {
+                $sums[] = $this->data[$i + 1] + $this->data[$i + 2] + $this->data[$i];
+            }
+        }
+        $max = count($sums);
+        for ($i = 1; $i < $max; $i++) {
+            if ($sums[$i - 1] < trim($sums[$i])) {
+                $total++;
+            }
+        }
 
-$total = 0;
-$max = count($data);
-$sums = [];
-for ($i = 0; $i < $max; $i++) {
-    if ($i < $max - 2) {
-        $sums[] = $data[$i + 1] + $data[$i + 2] + $data[$i];
+        $this->output($total);
     }
 }
-$max = count($sums);
-for ($i = 1; $i < $max; $i++) {
-    if ($sums[$i - 1] < trim($sums[$i])) {
-        $total++;
-    }
-}
 
-output($total);
+$obj = new day01(1);
+$obj->run();
