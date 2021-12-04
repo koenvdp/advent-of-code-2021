@@ -188,7 +188,7 @@ class DataSet
     }
 }
 
-class day04a extends abstractSolution
+class day04b extends abstractSolution
 {
     protected $draw = [
         63,23,2,65,55,94,38,20,22,39,5,98,9,60,80,45,99,68,12,3,6,34,64,10,70,69,95,96,83,81,32,30,42,73,52,48,92,28,37,
@@ -235,5 +235,5 @@ class day04a extends abstractSolution
     }
 }
 
-$obj = new day04a(4);
+$obj = new day04b(4);
 $obj->run();
