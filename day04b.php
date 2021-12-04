@@ -83,11 +83,8 @@ class Board {
         foreach ($this->rows as $row) {
             $unselected = array_merge($unselected, $row->getUnselected());
         }
-        foreach ($this->cols as $col) {
-            $unselected = array_merge($unselected, $col->getUnselected());
-        }
 
-        return array_sum(array_unique($unselected)) * $nr;
+        return array_sum($unselected) * $nr;
     }
 }
 
