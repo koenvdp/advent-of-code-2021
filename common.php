@@ -18,7 +18,7 @@ abstract class AbstractSolution {
         $lines = file($fileName);
         $data = [];
         foreach ($lines as $line) {
-            $line = trim($line);
+            $line = rtrim($line);
             if ($line) {
                 $data[] = $line;
             }
